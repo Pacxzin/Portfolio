@@ -1,3 +1,5 @@
+/* ================= RESET ================= */
+
 *{
 margin:0;
 padding:0;
@@ -11,7 +13,19 @@ color:white;
 scroll-behavior:smooth;
 }
 
-/* NAVBAR */
+/* COR AO SELECIONAR TEXTO */
+
+::selection{
+background:#9b00ff;
+color:white;
+}
+
+::-moz-selection{
+background:#9b00ff;
+color:white;
+}
+
+/* ================= NAV ================= */
 
 .navbar{
 display:flex;
@@ -23,15 +37,38 @@ padding:25px 60px;
 .menu a{
 color:white;
 text-decoration:none;
-margin-left:20px;
+margin-left:25px;
 font-weight:500;
+position:relative;
 }
 
-/* HERO */
+/* underline animado */
+
+.menu a::after{
+content:"";
+position:absolute;
+width:0%;
+height:2px;
+left:0;
+bottom:-5px;
+background:#9b00ff;
+transition:.3s;
+}
+
+.menu a:hover::after{
+width:100%;
+}
+
+/* ================= HERO ================= */
 
 .hero{
 height:100vh;
-background:linear-gradient(135deg,#2a0050,#6b00d6,#9b00ff);
+background:linear-gradient(
+135deg,
+#2a0050,
+#6b00d6,
+#9b00ff
+);
 display:flex;
 flex-direction:column;
 }
@@ -58,40 +95,82 @@ color:#e5e5e5;
 max-width:600px;
 }
 
-/* BOTÕES */
+/* ================= BOTÕES ================= */
 
 .buttons{
 margin-top:35px;
+display:flex;
+flex-wrap:wrap;
+gap:15px;
 }
+
+.btn,
+.btn-outline{
+padding:14px 26px;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+position:relative;
+overflow:hidden;
+transition:.35s;
+}
+
+/* BOTÃO BRANCO */
 
 .btn{
 background:white;
 color:black;
-padding:14px 24px;
-border-radius:30px;
-text-decoration:none;
-margin-right:10px;
-font-weight:600;
 }
+
+/* BOTÃO CONTORNO */
 
 .btn-outline{
 border:2px solid white;
-padding:12px 22px;
-border-radius:30px;
-text-decoration:none;
 color:white;
 }
 
-.btn-outline:hover,
-.btn:hover{
-opacity:.85;
+/* ANIMAÇÃO HOVER (EFEITO TECH) */
+
+.btn::before,
+.btn-outline::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,.4),
+transparent
+);
+transition:.6s;
 }
 
-/* SOBRE */
+.btn:hover::before,
+.btn-outline:hover::before{
+left:100%;
+}
+
+/* LEVANTAR BOTÃO */
+
+.btn:hover,
+.btn-outline:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(0,0,0,.35);
+}
+
+/* ================= SOBRE ================= */
 
 #sobre{
 padding:80px 20px;
 text-align:center;
+}
+
+#sobre h2{
+font-size:38px;
+margin-bottom:40px;
 }
 
 .sobre-container{
@@ -107,11 +186,16 @@ line-height:1.8;
 margin-bottom:20px;
 }
 
-/* PROJETOS */
+/* ================= PROJETOS ================= */
 
 #projetos{
 padding:80px 20px;
 text-align:center;
+}
+
+#projetos h2{
+font-size:38px;
+margin-bottom:40px;
 }
 
 .projects-container{
@@ -127,12 +211,34 @@ background:#0d1117;
 border:1px solid #21262d;
 padding:25px;
 border-radius:12px;
-transition:.3s;
+transition:.35s;
+position:relative;
+overflow:hidden;
+}
+
+/* brilho no hover */
+
+.project-card::before{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(
+120deg,
+transparent,
+rgba(155,0,255,.25),
+transparent
+);
+opacity:0;
+transition:.4s;
+}
+
+.project-card:hover::before{
+opacity:1;
 }
 
 .project-card:hover{
 transform:translateY(-8px);
-border-color:#6b00d6;
+border-color:#9b00ff;
 }
 
 .project-card p{
@@ -143,9 +249,10 @@ margin:15px 0;
 .project-card a{
 color:#58a6ff;
 text-decoration:none;
+font-weight:600;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
 border-top:1px solid #21262d;
@@ -166,4 +273,9 @@ display:block;
 color:#58a6ff;
 margin-bottom:6px;
 text-decoration:none;
+transition:.3s;
+}
+
+.footer-links a:hover{
+color:#9b00ff;
 }
