@@ -1,0 +1,169 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#010409;
+color:white;
+scroll-behavior:smooth;
+}
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 60px;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+font-weight:500;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:linear-gradient(135deg,#2a0050,#6b00d6,#9b00ff);
+display:flex;
+flex-direction:column;
+}
+
+.hero-content{
+max-width:900px;
+margin:auto;
+padding:20px;
+}
+
+.hero h1{
+font-size:64px;
+line-height:1.1;
+}
+
+.hero h1 span{
+color:#ffffffcc;
+}
+
+.hero p{
+margin-top:25px;
+font-size:20px;
+color:#e5e5e5;
+max-width:600px;
+}
+
+/* BOTÕES */
+
+.buttons{
+margin-top:35px;
+}
+
+.btn{
+background:white;
+color:black;
+padding:14px 24px;
+border-radius:30px;
+text-decoration:none;
+margin-right:10px;
+font-weight:600;
+}
+
+.btn-outline{
+border:2px solid white;
+padding:12px 22px;
+border-radius:30px;
+text-decoration:none;
+color:white;
+}
+
+.btn-outline:hover,
+.btn:hover{
+opacity:.85;
+}
+
+/* SOBRE */
+
+#sobre{
+padding:80px 20px;
+text-align:center;
+}
+
+.sobre-container{
+max-width:800px;
+margin:auto;
+text-align:left;
+}
+
+.sobre-container p{
+color:#8b949e;
+font-size:18px;
+line-height:1.8;
+margin-bottom:20px;
+}
+
+/* PROJETOS */
+
+#projetos{
+padding:80px 20px;
+text-align:center;
+}
+
+.projects-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+max-width:1000px;
+margin:auto;
+}
+
+.project-card{
+background:#0d1117;
+border:1px solid #21262d;
+padding:25px;
+border-radius:12px;
+transition:.3s;
+}
+
+.project-card:hover{
+transform:translateY(-8px);
+border-color:#6b00d6;
+}
+
+.project-card p{
+color:#8b949e;
+margin:15px 0;
+}
+
+.project-card a{
+color:#58a6ff;
+text-decoration:none;
+}
+
+/* FOOTER */
+
+footer{
+border-top:1px solid #21262d;
+padding:40px 20px;
+margin-top:80px;
+}
+
+.footer-container{
+max-width:1000px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+}
+
+.footer-links a{
+display:block;
+color:#58a6ff;
+margin-bottom:6px;
+text-decoration:none;
+}
